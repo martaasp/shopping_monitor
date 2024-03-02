@@ -1,8 +1,8 @@
 # SHOPPING MONITOR
-1. [Introducción](##introducción)
-2. [Preparación](##preparacion)
-3. [Uso](##uso)
-4. [Ayuda](##ayuda)
+1. [Introducción](#introducción)
+2. [Preparación](#preparación)
+3. [Uso](#uso)
+4. [Ayuda](#ayuda)
 
 ## Introducción
 
