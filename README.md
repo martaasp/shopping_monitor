@@ -8,7 +8,7 @@
 
 Este proyecto comprueba periódicamente la disponibilidad del conjunto de prendas indicadas y crea una alarma cuando identifica disponibilidad. 
 
-> NOTA: El proyecto ha sido probado con la tienda online de ZARA. Actualmente no está disponible para otras tiendas.
+> NOTA: El proyecto ha sido probado con la tienda online de ZARA España y Massimo Dutti España. Actualmente no está disponible para otras tiendas.
 
 ## Preparación
 

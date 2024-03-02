@@ -1,29 +1,35 @@
 from datetime import datetime
 
 class Logger:
-    def log(self, message, color, item=None):
+    def __init__(self, item_name=None):
+        self.set_item_name(item_name)
+    
+    def set_item_name(self, item_name):
+        self.item_name=item_name
+    
+    def log(self, message, color):
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        if item:
-            log_message = f'{color}{timestamp} - [{item}] - {message}{Colors.DEFAULT}\n'
+        if self.item_name:
+            log_message = f'{color}{timestamp} - [{self.item_name}] - {message}{Colors.DEFAULT}\n'
         else:
             log_message = f'{color}{timestamp} - {message}{Colors.DEFAULT}\n'
         print(log_message, end='')
         
-    def debug(self, message, item=None):
-        self.log(message, Colors.BLUE, item)
+    def debug(self, message):
+        self.log(message, Colors.BLUE)
 
-    def info(self, message, item=None):
-        self.log(message, Colors.DEFAULT, item)
+    def info(self, message):
+        self.log(message, Colors.DEFAULT)
 
-    def warning(self, message, item=None):
-        self.log(message, Colors.YELLOW, item)
+    def warning(self, message):
+        self.log(message, Colors.YELLOW)
 
-    def error(self, message, item=None):
-        self.log(message, Colors.RED, item)
+    def error(self, message):
+        self.log(message, Colors.RED)
 
-    def success(self, message, item=None):
-        self.log(message, Colors.GREEN, item)
-        
+    def success(self, message):
+        self.log(message, Colors.GREEN)
+    
 class Colors:
     RED = '\033[31m'
     GREEN = '\033[32m'
