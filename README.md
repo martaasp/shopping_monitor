@@ -1,5 +1,5 @@
 # SHOPPING MONITOR
-[_TOC_]
+[[_TOC_]]
 
 ## INTRODUCTION
 
