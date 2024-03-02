@@ -12,8 +12,8 @@ SCHEDULE="* * * * *" # La expresión cron (cada minuto)
 
 CURRENT_PATH := $(PWD)
 PYTHON := /usr/bin/python3
-MONITORIZACION_PRENDAS_UNIQUE_SOUND_SCRIPT := src/monitorizacion_prendas_unique_sound.py
-MONITORIZACION_PRENDAS_MULTIPLE_SOUND_SCRIPT := src/monitorizacion_prendas_multiple_sounds.py
+MONITORIZACION_PRENDAS_UNIQUE_SOUND_SCRIPT := src/items_monitoring_unique_sound.py
+MONITORIZACION_PRENDAS_MULTIPLE_SOUND_SCRIPT := src/items_monitoring_multiple_sounds.py
 ADD_CRON_SCRIPT := cron/add_job.sh
 REMOVE_CRON_SCRIPT := cron/remove_job.sh
 
