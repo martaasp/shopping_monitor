@@ -8,9 +8,13 @@ americana:
     MUSIC: mixkit-arcade-retro-game-over-213.mp3
 falda:
     URL: https://www.zara.com/es/es/falda-midi-tubo-pespuntes-p02813641.html
-    SIZE: XL
+    SIZE: S
     MUSIC: mixkit-fast-rocket-whoosh-1714.mp3
 cardigan: 
     URL: https://www.massimodutti.com/es/cardigan-punto-rayas-algodon-l06893921
     SIZE: L
     MUSIC: 00-positive-logo-opener.mp3
+vestido: 
+    URL: https://shop.mango.com/es/mujer/vestidos-y-monos-vestidos/vestido-asimetrico-abertura-lateral_67096334.html
+    SIZE: L
+    MUSIC: mixkit-fast-rocket-whoosh-1714.mp3
