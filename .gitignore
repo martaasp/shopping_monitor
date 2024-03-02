@@ -2,3 +2,4 @@
 logs
 audio_clips/*
 __pycache__
+*.ipynb
