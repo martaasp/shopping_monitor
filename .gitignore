@@ -1,0 +1,4 @@
+.venv
+logs
+audio_clips/*
+__pycache__
