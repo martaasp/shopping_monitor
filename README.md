@@ -1,8 +1,8 @@
 # SHOPPING MONITOR
-1. [Introducción](##Introducción)
-2. [Comenzar](##Comenzar)
-3. [Uso](##Uso)
-4. [Ayuda](##Ayuda)
+1. [Introducción](##introducción)
+2. [Preparación](##preparacion)
+3. [Uso](##uso)
+4. [Ayuda](##ayuda)
 
 ## Introducción
 
@@ -10,7 +10,7 @@ Este proyecto comprueba periódicamente la disponibilidad del conjunto de prenda
 
 > NOTA: El proyecto ha sido probado con la tienda online de ZARA. Actualmente no está disponible para otras tiendas.
 
-## Comenzar
+## Preparación
 
 Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu ordenador.
 
