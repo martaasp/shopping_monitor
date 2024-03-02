@@ -20,6 +20,12 @@ STOCK=[]
 class Utilities:
     def __init__(self):
         self.logger = Logger()
+    
+    @staticmethod  
+    def srt_to_bool(str):
+        if str in ['True', 'true', 1, 't', 'T']:
+            return True
+        else: return False
         
     @staticmethod    
     def load_shopping_list(file_path):
@@ -36,7 +42,8 @@ class Utilities:
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
         return driver
 
-    def play_sound(self, music_file):
+    @staticmethod
+    def play_sound(music_file):
         pygame.mixer.music.load(music_file)
         pygame.mixer.music.play()
         while pygame.mixer.music.get_busy():
@@ -45,7 +52,7 @@ class Utilities:
     
     def check_availability(self, driver, url, size, music, play_music=True):
         soup = self.get_title(driver, url)
-        self.logger.info(f"Buscando disponibilidad")
+        self.logger.info("Buscando disponibilidad")
         if 'zara' in url:
             return self.zara_check_availability(soup, size, music, play_music)
         if 'massimodutti' in url:

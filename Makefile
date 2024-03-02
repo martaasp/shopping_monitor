@@ -12,23 +12,17 @@ SCHEDULE="* * * * *" # La expresión cron (cada minuto)
 
 CURRENT_PATH := $(PWD)
 PYTHON := /usr/bin/python3
-MONITORIZACION_PRENDAS_UNIQUE_SOUND_SCRIPT := src/items_monitoring_unique_sound.py
-MONITORIZACION_PRENDAS_MULTIPLE_SOUND_SCRIPT := src/items_monitoring_multiple_sounds.py
+MONITORIZACION_PRENDAS_SCRIPT := src/items_monitoring.py
+UNIQUE_SOUND_PARAMETER := True
+MULTIPLE_SOUND_PARAMETER := False
 ADD_CRON_SCRIPT := cron/add_job.sh
 REMOVE_CRON_SCRIPT := cron/remove_job.sh
 
-clean_unique_sound: # Quitar script unique_sound del crontab
+clean: # Quitar script del crontab
 	@echo "Quitando el script del crontab..."
 	chmod +x $(REMOVE_CRON_SCRIPT)
-	./$(REMOVE_CRON_SCRIPT) $(MONITORIZACION_PRENDAS_UNIQUE_SOUND_SCRIPT)
+	./$(REMOVE_CRON_SCRIPT) $(MONITORIZACION_PRENDAS_SCRIPT)
 
-clean_multiple_sound: # Quitar script multiple_sounds del crontab
-	@echo "Quitando el script del crontab..."
-	chmod +x $(REMOVE_CRON_SCRIPT)
-	./$(REMOVE_CRON_SCRIPT) $(MONITORIZACION_PRENDAS_MULTIPLE_SOUND_SCRIPT)
-
-clean: clean_unique_sound clean_multiple_sound # Quitar ambos scripts del crontab
-	
 init:  # Instalar dependencias y actualizar pip
 	@echo "Instalando dependencias desde requirements.txt..."
 	$(PYTHON) -m pip install --upgrade pip
@@ -37,17 +31,17 @@ init:  # Instalar dependencias y actualizar pip
 
 install_multiple_sound: init # Añadir monitorizacion_prendas.py al crontab
 	@echo "Añadiendo el script al crontab..."
-	./$(ADD_CRON_SCRIPT) $(MONITORIZACION_PRENDAS_MULTIPLE_SOUND_SCRIPT) $(CURRENT_PATH) $(SCHEDULE)
+	./$(ADD_CRON_SCRIPT) $(MONITORIZACION_PRENDAS_SCRIPT) ${MULTIPLE_SOUND_PARAMETER} $(CURRENT_PATH) $(SCHEDULE)
 
 install_unique_sound: init # Añade monitorizacion_prendas_v2.py al crontab
 	@echo "Añadiendo el script al crontab..."	
-	./$(ADD_CRON_SCRIPT) $(MONITORIZACION_PRENDAS_UNIQUE_SOUND_SCRIPT) $(CURRENT_PATH) $(SCHEDULE)
+	./$(ADD_CRON_SCRIPT) $(MONITORIZACION_PRENDAS_SCRIPT) ${UNIQUE_SOUND_PARAMETER} $(CURRENT_PATH) $(SCHEDULE)
 
 run_multiple_sounds: # Ejecuta monitorizacion_prendas.py directamente
-	$(PYTHON) $(MONITORIZACION_PRENDAS_MULTIPLE_SOUND_SCRIPT) $(CURRENT_PATH)
+	$(PYTHON) $(MONITORIZACION_PRENDAS_SCRIPT) ${MULTIPLE_SOUND_PARAMETER} $(CURRENT_PATH)
 
 run_unique_sound: # Ejecuta monitorizacion_prendas_v2.py directamente
-	$(PYTHON) $(MONITORIZACION_PRENDAS_UNIQUE_SOUND_SCRIPT) $(CURRENT_PATH)
+	$(PYTHON) $(MONITORIZACION_PRENDAS_SCRIPT) ${UNIQUE_SOUND_PARAMETER} $(CURRENT_PATH)
 
 help: # mostrar ayuda
 	@echo "Opciones disponibles en este Makefile:"
