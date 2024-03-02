@@ -1,7 +1,10 @@
 # SHOPPING MONITOR
-[TOC]
+1. [Introducción](##Introducción)
+2. [Comenzar](##Comenzar)
+3. [Uso](##Uso)
+4. [Ayuda](##Ayuda)
 
-## INTRODUCTION
+## Introducción
 
 Este proyecto comprueba periódicamente la disponibilidad del conjunto de prendas indicadas y crea una alarma cuando identifica disponibilidad. 
 
